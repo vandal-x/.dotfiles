@@ -1,0 +1,39 @@
+#! /bin/sh
+
+xrdb -merge .Xresources &
+sxhkd &
+killall -q compton &
+sh ~/.config/polybar/launch.sh &
+sh ~/.local/bin/java_nonreparenting_wm_hack.sh &
+setxkbmap -option 'grp:caps_toggle' &
+xset r rate 200 80 &
+while pgrep -u $UID -x compton >/dev/null; do sleep 1; done
+compton &
+betterlockscreen -w &
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh) &
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK &
+
+if [[ $(hostname) == 'trustno1' ]]; then
+  bspc monitor -d terminal web code other chat music games
+  bspc config window_gap            12
+elif [[ $(hostname) == 'phphater' ]]; then
+  bspc monitor HDMI-1 -d terminal code music
+  bspc monitor HDMI-2 -d web other chat
+  bspc config window_gap            5
+fi
+
+bspc config border_width          2
+
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+bspc config focused_border_color $(xrdb -query | grep color5 | awk '{print $NF}')
+bspc config normal_border_color $(xrdb -query | grep background | awk '{print $NF}')
+
+bspc rule -a Gimp desktop='^4' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a Google Chrome \(usnatable\) desktop='^2'
+bspc rule -a PhpStorm desktop='^3'
+

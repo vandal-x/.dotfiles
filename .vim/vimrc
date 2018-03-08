@@ -1,0 +1,134 @@
+" Colors
+" colorscheme
+colorscheme Tomorrow
+
+" enable syntax processing
+syntax enable
+
+" Spaces & Tabs
+" number of visual spaces per TAB
+set tabstop=2
+" number of spaces in tab when editing
+set softtabstop=2
+set shiftwidth=2
+
+" tabs are spaces
+set expandtab
+
+" UI Config
+" show line numbers
+set number
+
+" show command in bottom bar
+set showcmd
+
+" highlight current line
+" set cursorline
+
+" load filetype-specific ident files
+filetype indent on
+
+" omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" visual autocomplete for command menu
+set wildmenu
+
+" redraw only when we need to
+set lazyredraw
+
+" highlight mathing [{()}]
+set showmatch
+
+" Searching
+" highlight matches
+set hlsearch
+
+" search as characters are entered
+set incsearch
+
+" enabe mouse scrolling
+set mouse=a
+
+" enabe copy to X clipborad buffer
+set clipboard=unnamedplus
+
+" forget about arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" find something from current path
+set path+=**
+
+" Plugins
+" plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+"Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
+"autocmd FileType javascript setlocal omnifunc=tern#Complete
+"set completeopt-=preview
+
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+let g:flow#showquickfix = 0
+
+" lint
+Plug 'w0rp/ale'
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '✱'
+
+let g:ale_linters = {
+\  'javascript': ['flow', 'eslint'],
+\  'css': ['stylelint']
+\}
+
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'css': ['stylelint']
+\}
+
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
+nnoremap <leader>af :ALEFix<cr>
+
+" JSDoc
+Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
+
+" Autocomplete
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' ,'for': 'javascript' }
+
+" Nerd Tree
+Plug 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
+
+" Buffer Explorer
+Plug 'jlanzarotta/bufexplorer'
+
+" Fuzzy finder
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+nnoremap <leader>ag :FZF<cr>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+" Surroundings
+Plug 'tpope/vim-surround'
+
+" js
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'digitaltoad/vim-pug'
+
+" Git
+Plug 'tpope/vim-fugitive'
+
+" initialize plugin system
+call plug#end()
+
