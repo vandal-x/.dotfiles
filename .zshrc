@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -69,4 +69,5 @@ alias cleanup="yaourt -Qtd"
 alias copy="xclip -selection c"
 alias paste="xclip -selection clipboard -o"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
+alias vim="nvim"
+alias v="nvim"
