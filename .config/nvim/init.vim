@@ -1,6 +1,6 @@
 " Colors
 " colorscheme
-colorscheme Tomorrow
+colorscheme pencil
 
 " enable syntax processing
 syntax enable
@@ -81,6 +81,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
 call plug#end()
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_ignore_case = 1
@@ -123,3 +124,9 @@ map <C-n> :NERDTreeToggle<CR>
 " use silver search
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <leader>fz :FZF<cr>
+
+" NeoSnippet
+" <C-k> autocplete snippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)

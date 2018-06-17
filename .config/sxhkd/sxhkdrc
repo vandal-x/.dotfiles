@@ -94,13 +94,19 @@ super + {_,shift + }3
 	bspc {desktop -f,node -d} code
 
 super + {_,shift + }4
-	bspc {desktop -f,node -d} other
+	bspc {desktop -f,node -d} documents
 
 super + {_,shift + }5
 	bspc {desktop -f,node -d} chat
 
 super + {_,shift + }6
+	bspc {desktop -f,node -d} files
+
+super + {_,shift + }7
 	bspc {desktop -f,node -d} music
+
+super + {_,shift + }8
+	bspc {desktop -f,node -d} extra
 
 #
 # preselect

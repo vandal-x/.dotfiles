@@ -25,7 +25,7 @@ get_icon() {
 }
 
 KEY="e56469118b97fd2c83bd886a268280b3"
-CITY="1508291"
+CITY="1486209"
 UNITS="metric"
 SYMBOL="°"
 

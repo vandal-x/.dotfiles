@@ -61,19 +61,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Meslo LG M # should be "Menlo" or something on macOS.
+    family: Meslo LG S # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: Meslo LG M # should be "Menlo" or something on macOS.
+    family: Meslo LG S # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: Meslo LG M # should be "Menlo" or something on macOS.
+    family: Meslo LG S # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
@@ -103,37 +103,34 @@ render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: true
+custom_cursor_colors: false
 
 # Colors (Pencil Light)
 colors:
- cursor:
-   cursor: '0x8959a8'
-   text: '0xffffff'
  # Default Colors
  primary:
-   background: '0xffffff'
-   foreground: '0x4d4d4c'
+   background: '0xf1f1f1'
+   foreground: '0x424242'
  # Normal colors
  normal:
-   black:   '0x000000'
-   red:     '0xc82829'
-   green:   '0x718c00'
-   yellow:  '0xf5871f'
-   blue:    '0x4271ae'
-   magenta: '0x8959a8'
-   cyan:    '0x3e999f'
-   white:   '0xd6d6d6'
+   black:   '0x212121'
+   red:     '0xc30771'
+   green:   '0x10a778'
+   yellow:  '0xa89c14'
+   blue:    '0x008ec4'
+   magenta: '0x523c79'
+   cyan:    '0x20a5ba'
+   white:   '0xe0e0e0'
  # Bright colors
  bright:
-   black:   '0x666666'
-   red:     '0xFF3334'
-   green:   '0x9ec400'
-   yellow:  '0xeab700'
-   blue:    '0x4271ae'
-   magenta: '0xb777e0'
-   cyan:    '0x54ced6'
-   white:   '0xefefef'
+   black:   '0x212121'
+   red:     '0xfb007a'
+   green:   '0x5fd7af'
+   yellow:  '0xf3e430'
+   blue:    '0x20bbfc'
+   magenta: '0x6855de'
+   cyan:    '0x4fb8cc'
+   white:   '0xf1f1f1'
 
 # Visual Bell
 #

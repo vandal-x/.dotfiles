@@ -1,6 +1,5 @@
 [colors]
 background = ${xrdb:background}
-background-alt = ${xrdb:color0}
 black = ${xrdb:color0}
 black-alt = ${xrdb:color8}
 red = ${xrdb:color1}
@@ -12,7 +11,6 @@ yellow-alt = ${xrdb:color11}
 blue = ${xrdb:color4}
 blue-alt = ${xrdb:color12}
 purple = ${xrdb:color5}
-purple-half = #dbcde5
 magenta-alt = ${xrdb:color13}
 cyan = ${xrdb:color6}
 cyan-alt = ${xrdb:color14}
@@ -20,65 +18,26 @@ white = ${xrdb:color7}
 white-alt = ${xrdb:color15}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color7}
-panel = #aaf1f1f1
+panel = ${colors.background}
+accent = ${xrdb:accent}
+background-alt = ${xrdb:backgroundAlt}
 
 [bar/trustno1]
 height = 30
 fixed-center = false
-width = 50%
-offset-x = 25%
+width = 2532
+offset-x = 14
 offset-y = 5
 
 background = ${colors.panel}
 foreground = ${colors.foreground}
 
-font-0 = "Meslo LG S:pixelsize=10;1"
-font-1 = "Material Design Icons:pixelsize=14;2"
+font-0 = Meslo LG S:pixelsize=10;1
+font-1 = Material Design Icons:antialia=false:size=14;2
 font-2 = Weather Icons:size=12;1
 
 modules-left = bspwm mpd
-modules-right = xkeyboard volume redshift weather date 
-
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/phphater]
-monitor = HDMI-1
-height = 24
-width = 100%
-bottom = true
-
-background = ${colors.panel}
-foreground = ${colors.foreground}
-
-font-0 = "Meslo LG S:pixelsize=8;1"
-font-1 = "Material Design Icons:pixelsize=12;2"
-font-2 = Weather Icons:size=10;1
-
-modules-left = bspwmfull
-modules-right = xkeyboard volume redshift weather date 
-
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/phphater2]
-monitor = HDMI-2
-height = 24
-width = 100%
-bottom = true
-
-background = ${colors.panel}
-foreground = ${colors.foreground}
-
-font-0 = "Meslo LG S:pixelsize=8;1"
-font-1 = "Material Design Icons:pixelsize=12;2"
-font-2 = Weather Icons:size=10;1
-
-modules-left = bspwmfull
+modules-right = xkeyboard volume redshift weather date
 
 wm-restack = bspwm
 
@@ -90,8 +49,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-background = ${colors.purple-half}
-format-foreground = ${colors.purple}
+format-foreground = ${colors.foreground}
 format-padding = 1
 
 label-layout = %layout%
@@ -104,52 +62,32 @@ type = internal/bspwm
 
 ws-icon-0 = terminal;
 ws-icon-1 = web;
-ws-icon-2 = code;
-ws-icon-3 = other;
+ws-icon-2 = code;
+ws-icon-3 = documents;
 ws-icon-4 = chat;
-ws-icon-5 = music;
-ws-icon-6 = games;
+ws-icon-5 = files;
+ws-icon-6 = music;
+ws-icon-7 = extra;
 ws-icon-default =  
 
 label-focused = %icon%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.purple}
-label-focused-padding = 1
-
-label-occupied = 
-label-urgent = 
-label-empty = 
-
-[module/bspwmfull]
-type = internal/bspwm
-
-ws-icon-0 = terminal;
-ws-icon-1 = web;
-ws-icon-2 = code;
-ws-icon-3 = other;
-ws-icon-4 = chat;
-ws-icon-5 = music;
-ws-icon-6 = games;
-ws-icon-default =  
-
-label-focused = %icon%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.purple}
+label-focused-foreground = ${colors.accent}
+label-focused-background = ${colors.background-alt}
 label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-foreground = ${colors.purple}
-label-occupied-background = ${colors.purple-half}
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.white}
 label-occupied-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.background}
-label-empty-background = ${colors.purple-half}
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.white}
 label-empty-padding = 1
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.foreground}
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.white}
 label-urgent-padding = 1
 
 [module/mpd]
@@ -165,10 +103,10 @@ icon-next = 
 label-song-maxlen = 50
 label-song-ellipsis = true
 icon-foreground = ${colors.foreground}
-format-online-background = ${colors.purple-half}
-format-online-foreground = ${colors.purple}
+format-online-background = ${colors.white}
+format-online-foreground = ${colors.foreground}
 format-online-padding = 1
-label-song-background = ${colors.panel}
+label-song-background = ${colors.background}
 label-song-foreground = ${colors.foreground}
 label-song-padding = 1
 
@@ -195,16 +133,13 @@ time = %I:%M %p
 
 label = %{A1:chromium --app='https\://calendar.google.com/calendar/r/agenda':}%date% %time%%{A}
 label-padding-right = 1
-label-background = ${colors.purple}
-label-foreground = ${colors.background}
+label-background = ${colors.background-alt}
 
 [module/volume]
 type = internal/volume
 
 format-volume = <ramp-volume>
 format-volume-padding = 1
-format-volume-background = ${colors.purple-half}
-format-volume-foreground = ${colors.purple}
 
 format-muted = 
 
@@ -217,16 +152,11 @@ type = custom/script
 exec = ~/.config/polybar/scripts/openweathermap-simple.sh
 interval = 600
 label-font = 3
-format-background = ${colors.purple}
-format-foreground = ${colors.background}
 format-padding = 1
+format-background = ${colors.background-alt}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 0
@@ -236,7 +166,6 @@ margin-bottom = 0
 type = custom/script
 exec = ~/.config/polybar/scripts/info-redshift-temp.sh
 label = %{F%output%}%{F-}
-format-background = ${colors.purple-half}
 label-padding-right = 1
 interval = 10
 click-left = ~/.config/polybar/scripts/toggle-redshift.sh
