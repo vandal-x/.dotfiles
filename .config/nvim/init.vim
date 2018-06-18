@@ -23,7 +23,7 @@ set number
 set showcmd
 
 " load filetype-specific ident files
-filetype indent on
+filetype plugin indent on
 
 " visual autocomplete for command menu
 set wildmenu
