@@ -63,7 +63,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 Plug 'carlitux/deoplete-ternjs'
-Plug 'lowtype/vim-flow'
+Plug 'flowtype/vim-flow'
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -79,6 +79,9 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'digitaltoad/vim-pug'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-fugitive'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
@@ -92,12 +95,11 @@ let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
 let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
 
+" Tern
 let g:tern_request_timeout = 1
 let g:tern_request_timeout = 6000
 let g:tern#command = ["tern"]
 let g:tern#arguments = ["--persistent"]
-
-let g:neosnippet#enable_completed_snippet = 1
 
 " ALE
 let g:ale_sign_error = '✖'
@@ -126,7 +128,21 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <leader>fz :FZF<cr>
 
 " NeoSnippet
+let g:neosnippet#enable_completed_snippet = 1
+
 " <C-k> autocplete snippets
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
+
+" Check grammar only for markdown and comments
+let g:grammarous#default_comments_only_filetypes = {
+            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+            \ }
+
+" Flow
+let g:flow#autoclose = 1
