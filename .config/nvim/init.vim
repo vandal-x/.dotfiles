@@ -82,6 +82,9 @@ Plug 'mattn/gist-vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-grammarous'
+Plug 'mhartington/nvim-typescript', {'do': 'sh install.sh'}
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Shougo/denite.nvim'
 
 call plug#end()
 
@@ -112,6 +115,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
+\  'typescript': ['tslint'],
 \  'css': ['stylelint'],
 \}
 
