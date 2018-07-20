@@ -22,6 +22,13 @@ panel = ${colors.background}
 accent = ${xrdb:accent}
 background-alt = ${xrdb:backgroundAlt}
 
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
 [bar/trustno1]
 height = 30
 fixed-center = false
@@ -43,6 +50,54 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/thinkpad]
+monitor = DP2-2
+height = 25
+fixed-center = false
+width = 100%
+
+background = ${colors.panel}
+foreground = ${colors.foreground}
+
+font-0 = Cousine:pixelsize=10;1
+font-1 = Material Design Icons:antialia=false:size=12;2
+font-2 = Weather Icons:size=12;1
+
+modules-left = bspwm
+modules-right = xkeyboard volume redshift battery weather date
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+tray-position = right
+tray-background = ${colors.background-alt}
+
+[bar/thinkpad-hdpi]
+height = 45
+fixed-center = false
+width = 100%
+
+background = ${colors.panel}
+foreground = ${colors.foreground}
+
+font-0 = Cousine:pixelsize=16;2
+font-1 = Material Design Icons:antialia=false:size=18;2
+font-2 = Weather Icons:size=18;2
+
+modules-left = bspwm
+modules-right = xkeyboard volume redshift battery weather date
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+tray-position = right
+tray-background = ${colors.background-alt}
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -140,12 +195,64 @@ type = internal/volume
 
 format-volume = <ramp-volume>
 format-volume-padding = 1
+format-muted-padding = 1
 
 format-muted = 
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+battery = BAT0
+adapter = AC
+
+format-full = <label-full>
+format-full-foreground = ${colors.green}
+label-full = 
+label-full-padding-right = 1
+
+format-discharging = <ramp-capacity><label-discharging>
+label-discharging = %percentage%%
+label-discharging-padding-right = 1
+;
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+format-charging = <animation-charging>
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-framerate = 500
+animation-charging-padding-right = 1
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+
+interval = 15
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =  %essid%
+label-disconnected = 
 
 [module/weather]
 type = custom/script
@@ -154,13 +261,6 @@ interval = 600
 label-font = 3
 format-padding = 1
 format-background = ${colors.background-alt}
-
-[settings]
-screenchange-reload = true
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
 
 [module/redshift]
 type = custom/script

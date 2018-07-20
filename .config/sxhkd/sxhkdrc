@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-  rofi -combi-modi window,drun,ssh,run -show combi -theme ~/.config/rofi/sidetab -font "Meslo LG S 10"
+  rofi -combi-modi window,drun,ssh,run -show combi -theme ~/.config/rofi/sidetab -font "Cousine 10"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -143,3 +143,14 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + r
+ bspc node @/ -R 90
+
+# backlight
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+XF86MonBrightnessDown
+  xbacklight -dec 10
+
