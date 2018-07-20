@@ -4,7 +4,7 @@ export ZSH=/home/vandal-x/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="hyperzsh"
+ZSH_THEME="sobole"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -63,7 +63,6 @@ export LD_LIBRARY_PATH=/usr/local/lib
 #
 
 # Alias
-
 alias update="yaourt -Syua"
 alias cleanup="yaourt -Qtd"
 alias copy="xclip -selection c"

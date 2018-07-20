@@ -14,7 +14,16 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK &
 
 bspc monitor -d terminal web code documents chat files music extra
-bspc config window_gap            12
+
+if [[ $(hostname) == 'trustno1' ]]; then
+  bspc config window_gap            12
+elif [[ $(hostname) == 'thinkpad' ]]; then
+  if  ~/.local/bin/hdpi; then
+    xrdb -merge ~/.Xresources.d/hdpi &
+  fi
+  nm-applet &
+  bspc config window_gap 0
+fi
 
 bspc config border_width          2
 
