@@ -50,6 +50,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+set backupcopy=yes
+
 " Plugins
 " plugin manager
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
