@@ -87,6 +87,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'mhartington/nvim-typescript', {'do': 'sh install.sh'}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/denite.nvim'
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
