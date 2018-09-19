@@ -18,7 +18,7 @@ white = ${xrdb:color7}
 white-alt = ${xrdb:color15}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color7}
-panel = ${colors.background}
+panel = ${xrdb:panel}
 accent = ${xrdb:accent}
 background-alt = ${xrdb:backgroundAlt}
 
@@ -74,6 +74,52 @@ cursor-scroll = ns-resize
 
 tray-position = right
 tray-background = ${colors.background-alt}
+
+[bar/left]
+monitor = DP2-2
+height = 25
+fixed-center = false
+width = 100%
+
+background = ${colors.panel}
+foreground = ${colors.foreground}
+
+font-0 = Cousine:pixelsize=10;1
+font-1 = Material Design Icons:antialia=false:size=12;2
+font-2 = Weather Icons:size=12;1
+
+modules-left = bspwm
+modules-right = volume redshift battery weather date
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+tray-position = right
+tray-background = ${colors.background-alt}
+
+
+[bar/right]
+monitor = DP2-3
+height = 25
+fixed-center = false
+width = 100%
+
+background = ${colors.panel}
+foreground = ${colors.foreground}
+
+font-0 = Cousine:pixelsize=10;1
+font-1 = Material Design Icons:antialia=false:size=12;2
+font-2 = Weather Icons:size=12;1
+
+modules-left = bspwm
+modules-right = xkeyboard cpu memory
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
 
 [bar/thinkpad-hdpi]
 height = 45
@@ -169,7 +215,7 @@ label-song-padding = 1
 type = internal/cpu
 interval = 2
 format-prefix = " "
-label = %percentage:2%%
+label = %percentage%%
 format-padding = 1
 
 [module/memory]
@@ -206,7 +252,7 @@ ramp-volume-2 = 
 [module/battery]
 type = internal/battery
 
-full-at = 99
+full-at = 95
 battery = BAT0
 adapter = AC
 

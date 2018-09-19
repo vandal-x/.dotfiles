@@ -9,7 +9,7 @@
 
 
 ! Base
-*background: #f1f1f1
+*background: #f5f6f7
 *foreground: #424242
 *cursorColor: #20bbfc
 ! Black
@@ -38,7 +38,8 @@
 *color15: #f1f1f1
 
 *accent: #008ec4
-*backgroundAlt: #d9d9d9
+*backgroundAlt: #f5f6f7
+*panel: #e7e8eb
 
 ! }}}
 

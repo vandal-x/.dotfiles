@@ -1,5 +1,5 @@
 ! Set the font
-URxvt.font: xft:Meslo LG M:style=Regular:size=10
+URxvt.font: xft:Cousine:style=Regular:size=9
 
 ! Disable scrollbar
 URxvt.scrollBar: false

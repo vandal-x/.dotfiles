@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+INTERNAL=eDP1
+
 # Terminate already running bar instances
 killall -q polybar
 
@@ -10,8 +12,13 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if [[ $(hostname) == 'trustno1' ]]; then
   polybar trustno1 &
 elif [[ $(hostname) == 'thinkpad' ]]; then
-  if  ~/.local/bin/hdpi; then
+  monitors=($(xrandr | grep " connected "| awk '{ print$1 }'))
+
+  if  [[ ${#monitors[@]} -eq 1 && ${monitors[0]} -eq INTERNAL ]]; then
     polybar thinkpad-hdpi &
+  elif [ ${#monitors[@]} -eq 3 ]; then
+    polybar left &
+    polybar right &
   else
     polybar thinkpad &
   fi
