@@ -7,7 +7,7 @@ sxhkd &
 killall -q compton &
 sh ~/.config/polybar/launch.sh &
 sh ~/.local/bin/java_nonreparenting_wm_hack.sh &
-setxkbmap -option grp:lctrl_toggle -option caps:ctrl_modifier &
+setxkbmap -option "grp:lctrl_toggle,caps:ctrl_modifier,lv3:ralt_switch,misc:typo" &
 xset r rate 200 80 &
 while pgrep -u $UID -x compton >/dev/null; do sleep 1; done
 compton &

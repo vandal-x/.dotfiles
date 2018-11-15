@@ -1,5 +1,7 @@
 source ~/.vim/vimrc
 
+set surround
 nmap <leader>af :action ReformatWithPrettierAction<CR>
 nmap <leader>f :action GotoFile<CR>
 nmap <leader>be :action RecentFiles<CR>
+nmap <leader>fz :action SearchEverywhere<CR>
