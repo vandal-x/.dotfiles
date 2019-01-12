@@ -1,4 +1,4 @@
 source ~/.vim/vimrc
 
-nmap <leader>af :action Javascript.Linters.EsLint.Fix<CR>
+nmap <leader>af :action ReformatWithPrettierAction<CR>
 nmap <leader>f :action GotoFile<CR>
