@@ -1,6 +1,4 @@
 " Colors
-" colorscheme
-colorscheme Tomorrow
 
 " enable syntax processing
 syntax enable
