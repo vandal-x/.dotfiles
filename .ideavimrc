@@ -1,6 +1,4 @@
 source ~/.vim/vimrc
 
 nmap <leader>af :action ReformatCode<CR>
-nmap <leader>f :action GotoFile<CR>
-nmap <leader>nf :action NewFile<CR>
-nmap <leader>r :action RunClass<CR>
+nmap <leader>ac :action GotoAction<CR>

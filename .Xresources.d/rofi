@@ -1,5 +1,0 @@
-! Rofi
-
-rofi.combi-modi: window,drun,ssh
-rofi.modi: combi
-

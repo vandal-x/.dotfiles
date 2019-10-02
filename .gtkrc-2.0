@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/vandal-x/.gtkrc-2.0.mine"
-gtk-theme-name="Arc"
+gtk-theme-name="Adwaita"
 gtk-icon-theme-name="Paper"
 gtk-font-name="Open Sans Regular 10"
 gtk-cursor-theme-name="capitaine-cursors"

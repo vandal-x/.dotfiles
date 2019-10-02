@@ -60,3 +60,6 @@ noremap <Right> <NOP>
 
 " find something from current path
 set path+=**
+
+" histogram-based diffs 
+set diffopt=filler,internal,algorithm:histogram,indent-heuristic
