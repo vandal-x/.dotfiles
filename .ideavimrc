@@ -1,4 +1,22 @@
 source ~/.vim/vimrc
 
-nmap <leader>af :action ReformatCode<CR>
+set surround
+set clipboard+=ideaput
+
 nmap <leader>ac :action GotoAction<CR>
+nmap <leader>n  :action ShowNavBar<CR>
+
+nmap <leader>be :action RecentLocations<CR>
+nmap <leader>fu :action FindUsages<CR>
+nmap <leader>fz :action SearchEverywhere<CR>
+
+nmap <leader>rn :action RunClass<CR>
+nmap <leader>re :action RenameElement<CR>
+nmap <leader>ra :action Refactorings.QuickListPopupAction<CR>
+
+nmap <leader>e  :action ShowErrorDescription<CR>
+
+nmap <leader>gc :action CheckinProject<CR>
+nmap <leader>gp :action Vcs.Push<CR>
+nmap <leader>gh :action Vcs.History<CR>
+nmap <leader>gl :action Vcs.Show.Log<CR>
