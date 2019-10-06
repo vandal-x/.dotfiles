@@ -10,6 +10,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle tmux
 antigen bundle extract
+antigen bundle nvm
 
 antigen apply
 
@@ -24,14 +25,9 @@ export PATH=~/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Alias
-alias update="yaourt -Syua"
-alias cleanup="yaourt -Qtd; sudo paccache -r"
+alias update="yay -Syu"
+alias cleanup="yay -Yc; sudo paccache -r"
 alias copy="xclip -selection c"
 alias paste="xclip -selection clipboard -o"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias v="vim"
-
-# nvm
-export NVM_DIR="$HOME/.config"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
