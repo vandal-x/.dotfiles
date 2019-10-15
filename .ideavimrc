@@ -6,7 +6,7 @@ set clipboard+=ideaput
 nmap <leader>ac :action GotoAction<CR>
 nmap <leader>n  :action ShowNavBar<CR>
 
-nmap <leader>be :action RecentLocations<CR>
+nmap <leader>be :action RecentFiles<CR>
 nmap <leader>fu :action FindUsages<CR>
 nmap <leader>fz :action SearchEverywhere<CR>
 
@@ -20,3 +20,5 @@ nmap <leader>gc :action CheckinProject<CR>
 nmap <leader>gp :action Vcs.Push<CR>
 nmap <leader>gh :action Vcs.History<CR>
 nmap <leader>gl :action Vcs.Show.Log<CR>
+
+nmap <leader>m  :action PlaySavedMacrosAction<CR>
