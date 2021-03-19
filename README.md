@@ -1,5 +1,7 @@
 # .dotfiles
+Repository with personal configs
 
+## How it works?
 Idea was stolen from [this topic][1] on HN.
 There is alias in `.zshrc` called `dtf`:
 ```
