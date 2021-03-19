@@ -10,9 +10,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle tmux
 antigen bundle extract
-antigen bundle nvm
 
 antigen apply
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
 
 # User configuration
 DISABLE_UNTRACKED_FILES_DIRTY="true"
