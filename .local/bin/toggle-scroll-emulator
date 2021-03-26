@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CURRENT_SETTINGS="$(gsettings get org.gnome.desktop.peripherals.trackball scroll-wheel-emulation-button)"
+
+if [ $CURRENT_SETTINGS == '3' ]; then
+    gsettings set org.gnome.desktop.peripherals.trackball scroll-wheel-emulation-button 0
+    notify-send -t 3000 "Tracball scroll emulation" "Turn off"
+else
+    gsettings set org.gnome.desktop.peripherals.trackball scroll-wheel-emulation-button 3
+    notify-send -t 3000 "Tracball scroll emulation" "Turn on"
+fi
+
