@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Creates markdown note with given name and opens it in editor
+
+NOTES_DIR="${NOTES_DIR:-$HOME/Documents/notes}"
+
+note_name="${1:-Without name}"
+note_filepath="$NOTES_DIR/$(date +%F) $note_name.md"
+
+if [ -f "$note_filepath" ]; then
+    echo "Note with name \"$note_name\" already exists" >&2
+    exit 1
+fi
+
+touch "$note_filepath"
+
+cat > "$note_filepath" << EOF
+---
+created: $(date '+%b %d, %Y %H:%M')
+title: $note_name
+---
+
+# $note_name
+
+EOF
+
+$EDITOR "$note_filepath" &
